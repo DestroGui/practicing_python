@@ -9,7 +9,7 @@ CHAVE_API_GOOGLE = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=CHAVE_API_GOOGLE)
 MODELO_ESCOLHIDO = 'gemini-1.5-flash'
 
-prompt_sistema = 'Liste apenas os nomes dos produtos e ofereca uma breve descricao'
+prompt_sistema = 'Liste apenas os nomes dos produtos e ofereca uma grande descricao deles'
 
 configuracao_modelo = {
     'temperature' : 2.0, #Maximo possivel
@@ -29,4 +29,6 @@ pergunta = 'Liste tres produtos de moda sustavel para ir ao shopping'
 
 resposta = llm.generate_content(pergunta)
 
-print(f'A resposta gerada é: \n{resposta.text}')
+resposta_padrao = resposta.text
+
+print(f'A resposta gerada é: \n{resposta_padrao}')
